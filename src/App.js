@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import GridComponent from './GridComponent';
+import Blog from './blog.js';
+import Home from './Home.js';
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/Home">Home</Link>
+            </li>
+            <li>
+              <Link to="/Blog">Blogs</Link>
+            </li>
+            <li>
+              <Link to="/GridComponent">GridComponent</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/Home" element={<Home />} /> 
+          <Route path="/Blog" element={<Blog />} />
+          <Route path="/GridComponent" element={<GridComponent />} />
+        </Routes>
+
+
+      </div>
+
+
+    );
+  }
 }
 
-export default App;
+
+// function App() {
+//     return (
+//         <div>
+//             <GridComponent />
+//             <Blog />
+//         </div>
+//     );
+// }
+
+ export default App;
