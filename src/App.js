@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { experimentalStyled as styled } from '@mui/material/styles';
-
+import FooterComponent from './FooterComponent'
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -22,19 +22,20 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <NavBarComponent></NavBarComponent>
 
-        <Box sx={{ flexGrow: 1}}>
-          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+        <NavBarComponent/>
+
+        <Box sx={{ flexGrow: 1}} style={{ marginTop: '2vw' }}>
+          <Grid container rowSpacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             <Grid item xs={12}>
-              <Item>Header</Item>
-            </Grid>
-            <Grid item xs={12}>
-              <Item>Home image</Item>
+              <Item>Home Image</Item>
             </Grid>
           </Grid>
-          <Grid container spacing={{xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-            {Array(9).fill(null).map((_, index) => (
+        </Box>
+
+        <Box sx={{flexGrow: 1}} style={{ marginTop: '2vw', marginBottom:'2vw'}}>
+          <Grid container rowSpacing={{xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+            {Array(24).fill(null).map((_, index) => (
               <Grid item xs={4} key={index}>
                 <Item>Listed Item</Item>
               </Grid>
@@ -42,20 +43,11 @@ class App extends React.Component {
           </Grid>
         </Box>
         
+        <FooterComponent/>
 
       </div>
     );
   }
 }
-
-
-// function App() {
-//     return (
-//         <div>
-//             <GridComponent />
-//             <Blog />
-//         </div>
-//     );
-// }
 
  export default App;
