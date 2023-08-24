@@ -1,6 +1,3 @@
-import GridComponent from './GridComponent';
-import Blog from './blog.js';
-import Home from './Home.js';
 import React from 'react';
 import NavBarComponent from './NavBarComponent';
 import { Routes, Route, Link } from 'react-router-dom';
