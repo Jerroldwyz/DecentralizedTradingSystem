@@ -23,15 +23,13 @@ class App extends React.Component {
         <NavBarComponent/>
 
         <Box sx={{ flexGrow: 1}} style={{ marginTop: '2vw' }}>
-          <Grid container rowSpacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-            <Grid item xs={12}>
-              <Item>Home Image</Item>
-            </Grid>
+          <Grid item xs={12}>
+            <Item>Home Image</Item>
           </Grid>
         </Box>
 
         <Box sx={{flexGrow: 1}} style={{ marginTop: '2vw', marginBottom:'2vw'}}>
-          <Grid container rowSpacing={{xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+          <Grid container spacing={2} columnSpacing={4}>
             {Array(24).fill(null).map((_, index) => (
               <Grid item xs={4} key={index}>
                 <Item>Listed Item</Item>
